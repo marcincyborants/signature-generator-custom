@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generator stopek dla CyberForces i TestArmy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container mb">
+        <h2>Instrukcja obsługi aplikacji tworzącej stopkę do maila</h2>
+        <ol>
+            <li>Zdjęcie należy wgrać np. na Google Photos czy https://pl.imgbb.com/ i wkleić URL do generatora.</li>
+            <li>Najbezpieczniejszym i najpewniejszym rozwiązaniem, jest skorzystanie z url zdjęcia wgranego na
+                https://testarmy.com/team/ </li>
+            <li>Po wypełnieniu pól należy kliknąć "Generuj".</li>
+            <li>Po wygenerowaniu, kopiujemy zawartość poprzez kliknięcie przysisku "Kopiuj".</li>
+            <li>Przechodzimy do ustawień skrzynki pocztowej</li>
+            <li>W zakładce podpis wklejamy skopiowaną wcześniej treść</li>
+            <li>Zapisujemy ustawienia</li>
+            <li>Testujemy działanie wysyłając maila do koleżanki z pracy :)</li>
+        </ol>
+    </section>
+
+    <section class="container mb">
+        <h2>Generator podpisu e-mail</h2>
+        <form id="form-generator" enctype="multipart/form-data" action="/" method="post">
+            <div class="form-group">
+                <label for="name" class="required">Imię</label>
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Wprowadź imię"
+                    name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname" class="required">Nazwisko</label>
+                <input type="text" class="form-control" id="surname" aria-describedby="surnameHelp" placeholder="Wprowadź nazwisko"
+                    name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="position" class="required">Stanowisko</label>
+                <input type="text" class="form-control" id="position" aria-describedby="positionHelp" placeholder="Twoje stanowisko"
+                    name="position" required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="required">Nr telefonu</label>
+                <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Twój nr telefonu"
+                    name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="image_file" class="required">Zdjęcie</label>
+                <input type="text" class="form-control" id="image" name="image_social" placeholder="Adres www do zdjęcia profilu"
+                    required>
+            </div>
+            <div class="form-group">
+                <label class="required">Generuj dla</label>
+                <label class="radio-label">
+                    <input type="radio" class="form-control--radio" name="brand" value="cyberforces" required checked>
+                    CyberForces
+                </label>
+                <label class="radio-label">
+                    <input type="radio" class="form-control--radio" name="brand" value="testarmy" required> TestArmy
+                </label>
+            </div>
+            <div class="text-align-center mt mb">
+                <button type="submit" name="submit" class="button--blue" id="button-submit">Generuj</button>
+            </div>
+        </form>
+    </section>
+
+    <hr class="mt mb">
+
+    <!-- SIGNATURE TEMPLATE -->
+
+    <section id="source_code">
+
+        <table cellpadding="0" cellspacing="0" width="400">
+            <tr>
+                <td width="80" valign="top" align="center">
+                    <img class="main-img" id="image_social_field" src="https://raw.githubusercontent.com/marcincyborants/CyberForces-generator/gh-pages/avatar.png"
+                        alt="Photo" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
+                </td>
+
+                <td width="250" style="padding-left: 20px;">
+
+                    <p class="space--small" style="font-size: 0; height: 10px; margin: 0;">
+                    </p>
+
+                    <p class="name" style="font-size: 16px;line-height: 16px;font-weight: bold;color: #0a69c6;margin: 0;">
+                        <span id="name_field">Imię</span> <span id="surname_field">Nazwisko</span>
+                    </p>
+
+                    <p class="space--hr" style="font-size: 0; margin: 10px 0; height: 0px; width: 40px; border: 1px solid #0A1C48;">
+                    </p>
+
+                    <p class="position" id="position_field" style="font-size: 12px;line-height: 18px;color: #0A1C48;text-transform: uppercase; margin: 0;font-weight: bold;">
+                        Stanowisko
+                    </p>
+
+                    <p class="number" id="phone_field" style="font-size: 12px;line-height: 18px; margin: 0;">
+                        +(48) 666 666 666
+                    </p>
+
+                    <p class="space--small" style="font-size: 0; height: 10px; margin: 0;">
+                    </p>
+
+                    <p class="reviews" style="margin: 0;line-height: 18px;">
+                        <span style="font-size: 14px; background: #0a69c6">&nbsp;</span>
+                        <a href="https://clutch.co/profile/testarmy#reviews" target="_blank" style="text-decoration: none; font-size: 12px;line-height: 14px;color: #0a69c6; margin: 0;font-weight: bold;">Check our reviews on Clutch</a>
+                    </p>
+
+                    <p class="schedule" style="margin: 0;line-height: 18px;">
+                        <span style="font-size: 14px; background: #0a69c6">;</span>
+                        <a href="https://calendly.com/jason-burton" target="_blank" style="text-decoration: none; font-size: 12px;line-height: 14px;color: #0a69c6; margin: 0;font-weight: bold;">Schedule a call</a>
+                    </p>
+
+                    <p class="space" style="font-size: 0;height: 22px;margin: 0;">
+                    </p>
+
+                    <p class="logo" style="margin: 0;">
+                        <img id="logo_field" src="https://raw.githubusercontent.com/marcincyborants/CyberForces-generator/gh-pages/cyberforces_logo_dark.png"
+                            alt="logo" style="width:190px;">
+                    </p>
+
+                    <p class="space--small" style="font-size: 0; height: 10px;margin: 0;">
+                    </p>
+                    <p class="company" style="margin: 0;">
+                        <span id="company-name" class="company-name" style="display: block; font-size: 12px; line-height: 16px;font-weight: bold;">
+                            TestArmy CyberForces Sp. z o.o.</span>
+                        <span style="display: block; font-size: 12px; line-height: 16px;">
+                            ul.Petuniowa 9/5,
+                        </span>
+                        <span style="display: block; font-size: 12px; line-height: 16px;">
+                            53-238 Wrocław, Poland
+                        </span>
+                    </p>
+
+                    <p class="space--small" style="font-size: 0; height: 10px;margin: 0;">
+                    </p>
+
+                    <p class="social" style="line-height: 0px; font-size: 0px;margin: 0;">
+
+                        <a href="https://twitter.com/test_army" target="_blank" style="text-decoration: none;">
+                            <img style="margin-right: 20px;" src="https://raw.githubusercontent.com/marcincyborants/CyberForces-generator/gh-pages/tw.png"
+                                alt="Twitter">
+                        </a>
+                        <a href="https://www.facebook.com/testarmy/" target="_blank" style="text-decoration: none;">
+                            <img style="margin-right: 20px;" src="https://raw.githubusercontent.com/marcincyborants/CyberForces-generator/gh-pages/f.png"
+                                alt="Facebook">
+                        </a>
+                        <a id="linkedin-social" href="https://www.linkedin.com/company/cyberforces/" target="_blank"
+                            style="text-decoration: none;">
+                            <img src="https://raw.githubusercontent.com/marcincyborants/CyberForces-generator/gh-pages/in.png"
+                                alt="Linkedin">
+                        </a>
+                    </p>
+
+                    <p class="space--small" style="font-size: 0; height: 10px;margin: 0;">
+                    </p>
+
+                </td>
+
+                <td width="auto"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" style="padding-left: 20px;">
+                    <p id="footer-info" class="info" style="font-size: 10px; line-height: 14px; color: #9a9fac; margin:0; text-align: justify;">
+                        NIP: 8943103634, REGON: 0367113636, KRS: 0000674716, Sąd Rejonowy dla Wrocławia-Fabrycznej, VI Wydział‚ Gospodarczy Krajowego Rejestru Sądowego Kapitał zakładowy: 100 000 PLN
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+    <section class="container text-align-center mt">
+        <button id="copy-button" class="button--blue">Kopiuj</button>
+        <p class="copy-info">Skopiowano zawartość</p>
+    </section>
+
+    <!-- SIGNATURE TEMPLATE END -->
+
+    <hr class="mt mb">
+
+    <section class="container mb">
+        <textarea id="html_code" name="source_code_area"></textarea>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+<!--
+
+    CF
+NIP: 8943103634, REGON: 0367113636, Numer KRS:0000674716, Sąd Rejonowy dla Wrocławia-Fabrycznej we Wrocławiu, VI Wydział‚ Gospodarczy Krajowego Rejestru Sądowego Kapitał zakładowy: 100 000 PLN
+
+    TA
+NIP: 8992754194, REGON: 022426578, Numer KRS: 0000679700, Sąd Rejonowy dla Wrocławia-Fabrycznej, VI Wydział‚ Gospodarczy Krajowego Rejestru Sądowego Kapitał zakładowy: 123 000 PLN
+
+-->
